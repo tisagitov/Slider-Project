@@ -65,6 +65,10 @@ body {
   grid-gap: 34px;
 }
 
+.show-projects__details--hidden {
+  display: none;
+}
+
 .title--small {
   font-size: 18px;
   line-height: 25px;

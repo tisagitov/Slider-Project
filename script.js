@@ -1,5 +1,8 @@
 // Variables
 
+const admiralInfo = document.getElementById('admiral-info');
+const sochiInfo = document.getElementById('sochi-info');
+const patrioticInfo = document.getElementById('patriotic-info');
 const leftArrow = document.querySelector('.show-projects__left-arrow');
 const rightArrow = document.querySelector('.show-projects__right-arrow');
 const leftBtn = document.getElementById('left-btn');
@@ -45,6 +48,11 @@ patrioticLabel.addEventListener('click', showPatriotic);
 // Functions
 
 function showAdmiral() {
+    if (admiralInfo.classList.contains('show-projects__details--hidden')) {
+        admiralInfo.classList.remove('show-projects__details--hidden');
+        sochiInfo.classList.add('show-projects__details--hidden');
+        patrioticInfo.classList.add('show-projects__details--hidden');
+    }
     if (!admiralLabel.classList.contains('show-projects__project-name--active')) {
         admiralLabel.classList.add('show-projects__project-name--active');
         sochiLabel.classList.remove('show-projects__project-name--active');
@@ -63,6 +71,11 @@ function showAdmiral() {
 }
 
 function showSochi() {
+    if (sochiInfo.classList.contains('show-projects__details--hidden')) {
+        sochiInfo.classList.remove('show-projects__details--hidden');
+        admiralInfo.classList.add('show-projects__details--hidden');
+        patrioticInfo.classList.add('show-projects__details--hidden');
+    }
     if (!sochiLabel.classList.contains('show-projects__project-name--active')) {
         sochiLabel.classList.add('show-projects__project-name--active');
         admiralLabel.classList.remove('show-projects__project-name--active');
@@ -81,6 +94,11 @@ function showSochi() {
 }
 
 function showPatriotic() {
+    if (patrioticInfo.classList.contains('show-projects__details--hidden')) {
+        patrioticInfo.classList.remove('show-projects__details--hidden');
+        admiralInfo.classList.add('show-projects__details--hidden');
+        sochiInfo.classList.add('show-projects__details--hidden');
+    }
     if (!patrioticLabel.classList.contains('show-projects__project-name--active')) {
         patrioticLabel.classList.add('show-projects__project-name--active');
         admiralLabel.classList.remove('show-projects__project-name--active');
