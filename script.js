@@ -48,70 +48,55 @@ patrioticLabel.addEventListener('click', showPatriotic);
 // Functions
 
 function showAdmiral() {
-    if (admiralInfo.classList.contains('show-projects__details--hidden')) {
-        admiralInfo.classList.remove('show-projects__details--hidden');
-        sochiInfo.classList.add('show-projects__details--hidden');
-        patrioticInfo.classList.add('show-projects__details--hidden');
-    }
-    if (!admiralLabel.classList.contains('show-projects__project-name--active')) {
-        admiralLabel.classList.add('show-projects__project-name--active');
-        sochiLabel.classList.remove('show-projects__project-name--active');
-        patrioticLabel.classList.remove('show-projects__project-name--active');
-    }
-    if (!leftBtn.classList.contains('show-projects__button--active')) {
-        leftBtn.classList.add('show-projects__button--active');
-        middleBtn.classList.remove('show-projects__button--active');
-        rightBtn.classList.remove('show-projects__button--active');
-    }
-    if (admiralImage.classList.contains('show-projects__image--hidden')) {
-        admiralImage.classList.remove('show-projects__image--hidden')
-        sochiImage.classList.add('show-projects__image--hidden')
-        patrioticImage.classList.add('show-projects__image--hidden')
-    }
+    admiralInfo.classList.remove('show-projects__details--hidden');
+    sochiInfo.classList.add('show-projects__details--hidden');
+    patrioticInfo.classList.add('show-projects__details--hidden');
+
+    admiralLabel.classList.add('show-projects__project-name--active');
+    sochiLabel.classList.remove('show-projects__project-name--active');
+    patrioticLabel.classList.remove('show-projects__project-name--active');
+
+    leftBtn.classList.add('show-projects__button--active');
+    middleBtn.classList.remove('show-projects__button--active');
+    rightBtn.classList.remove('show-projects__button--active');
+
+    admiralImage.classList.remove('show-projects__image--hidden');
+    sochiImage.classList.add('show-projects__image--hidden');
+    patrioticImage.classList.add('show-projects__image--hidden');
 }
 
 function showSochi() {
-    if (sochiInfo.classList.contains('show-projects__details--hidden')) {
-        sochiInfo.classList.remove('show-projects__details--hidden');
-        admiralInfo.classList.add('show-projects__details--hidden');
-        patrioticInfo.classList.add('show-projects__details--hidden');
-    }
-    if (!sochiLabel.classList.contains('show-projects__project-name--active')) {
-        sochiLabel.classList.add('show-projects__project-name--active');
-        admiralLabel.classList.remove('show-projects__project-name--active');
-        patrioticLabel.classList.remove('show-projects__project-name--active');
-    }
-    if (!middleBtn.classList.contains('show-projects__button--active')) {
-        middleBtn.classList.add('show-projects__button--active');
-        rightBtn.classList.remove('show-projects__button--active');
-        leftBtn.classList.remove('show-projects__button--active');
-    }
-    if (sochiImage.classList.contains('show-projects__image--hidden')) {
-        sochiImage.classList.remove('show-projects__image--hidden')
-        admiralImage.classList.add('show-projects__image--hidden')
-        patrioticImage.classList.add('show-projects__image--hidden')
-    }
+    sochiInfo.classList.remove('show-projects__details--hidden');
+    admiralInfo.classList.add('show-projects__details--hidden');
+    patrioticInfo.classList.add('show-projects__details--hidden');
+
+    sochiLabel.classList.add('show-projects__project-name--active');
+    admiralLabel.classList.remove('show-projects__project-name--active');
+    patrioticLabel.classList.remove('show-projects__project-name--active');
+
+    middleBtn.classList.add('show-projects__button--active');
+    rightBtn.classList.remove('show-projects__button--active');
+    leftBtn.classList.remove('show-projects__button--active');
+
+    sochiImage.classList.remove('show-projects__image--hidden');
+    admiralImage.classList.add('show-projects__image--hidden');
+    patrioticImage.classList.add('show-projects__image--hidden');
 }
 
 function showPatriotic() {
-    if (patrioticInfo.classList.contains('show-projects__details--hidden')) {
-        patrioticInfo.classList.remove('show-projects__details--hidden');
-        admiralInfo.classList.add('show-projects__details--hidden');
-        sochiInfo.classList.add('show-projects__details--hidden');
-    }
-    if (!patrioticLabel.classList.contains('show-projects__project-name--active')) {
-        patrioticLabel.classList.add('show-projects__project-name--active');
-        admiralLabel.classList.remove('show-projects__project-name--active');
-        sochiLabel.classList.remove('show-projects__project-name--active');
-    }
-    if (!rightBtn.classList.contains('show-projects__button--active')) {
-        rightBtn.classList.add('show-projects__button--active');
-        middleBtn.classList.remove('show-projects__button--active');
-        leftBtn.classList.remove('show-projects__button--active');
-    }
-    if (patrioticImage.classList.contains('show-projects__image--hidden')) {
-        patrioticImage.classList.remove('show-projects__image--hidden')
-        admiralImage.classList.add('show-projects__image--hidden')
-        sochiImage.classList.add('show-projects__image--hidden')
-    }
+    patrioticInfo.classList.remove('show-projects__details--hidden');
+    admiralInfo.classList.add('show-projects__details--hidden');
+    sochiInfo.classList.add('show-projects__details--hidden');
+
+    patrioticLabel.classList.add('show-projects__project-name--active');
+    admiralLabel.classList.remove('show-projects__project-name--active');
+    sochiLabel.classList.remove('show-projects__project-name--active');
+
+    rightBtn.classList.add('show-projects__button--active');
+    middleBtn.classList.remove('show-projects__button--active');
+    leftBtn.classList.remove('show-projects__button--active');
+
+    patrioticImage.classList.remove('show-projects__image--hidden');
+    admiralImage.classList.add('show-projects__image--hidden');
+    sochiImage.classList.add('show-projects__image--hidden');
 }
