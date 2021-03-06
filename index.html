@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="projects" class="completed-projects">
+      <div class="container show-projects">
+        <div class="show-projects__description">
+          <h2 class="title title--spacing">
+            Completed <br />
+            projects
+          </h2>
+          <p class="show-projects__main-p">
+            Only a small part of the work performed by our company is presented
+            <br />
+            on the site. For 14 years on in the construction <br />
+            market we have made happy more than 1000 families
+          </p>
+          <div class="show-projects__details">
+            <div class="show-projects__detail">
+              <span class="title title--small">City:</span>
+              <p class="show-projects__detail-p">
+                Rostov-on-Don <br />
+                LCD admiral
+              </p>
+            </div>
+            <div class="show-projects__detail">
+              <span class="title title--small">Apartment area:</span>
+              <p class="show-projects__detail-p">81 m2</p>
+            </div>
+            <div class="show-projects__detail">
+              <span class="title title--small">Repair time:</span>
+              <p class="show-projects__detail-p">3.5 months</p>
+            </div>
+            <div class="show-projects__detail">
+              <span class="title title--small">Repair Cost:</span>
+              <p class="show-projects__detail-p">Upon request</p>
+            </div>
+          </div>
+          <div class="show-projects__slider">
+            <img
+              src="./img/left-arrow.svg"
+              alt=""
+              class="show-projects__left-arrow"
+            />
+            <div class="show-projects__slider-buttons">
+              <div
+                id="left-btn"
+                class="show-projects__button show-projects__button--active"
+              ></div>
+              <div id="middle-btn" class="show-projects__button"></div>
+              <div id="right-btn" class="show-projects__button"></div>
+            </div>
+            <img
+              src="./img/right-arrow.svg"
+              alt=""
+              class="show-projects__right-arrow"
+            />
+          </div>
+        </div>
+        <div class="show-projects__showcase">
+          <ul class="show-projects__projects">
+            <li
+              id="admiral-label"
+              class="show-projects__project-name show-projects__project-name--active"
+            >
+              Rostov-on-Don, Admiral
+            </li>
+            <li id="sochi-label" class="show-projects__project-name">
+              Sochi Thieves
+            </li>
+            <li id="patriotic-label" class="show-projects__project-name">
+              Rostov-on-Don Patriotic
+            </li>
+          </ul>
+          <img
+            id="admiral-image"
+            src="./img/completed-projects-1.png"
+            alt="Image of the completed project in Rostov-on-Don, Admiral"
+            class="show-projects__image"
+          />
+          <img
+            id="sochi-image"
+            src="./img/completed-projects-2.png"
+            alt="Image of the completed project in Sochi, Thieves"
+            class="show-projects__image show-projects__image--hidden"
+          />
+          <img
+            id="patriotic-image"
+            src="./img/completed-projects-3.png"
+            alt="Image of the completed project in Rostov-on-Don, Patriotic"
+            class="show-projects__image show-projects__image--hidden"
+          />
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
