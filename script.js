@@ -1,102 +1,76 @@
-// Variables
+let slides = [
+    {
+        city: 'Rostov-on-Don <br/>LCD admiral',
+        area: '81 m2',
+        time: '3.5 months',
+        imgSrc: './img/completed-projects-1.png',
+        altText: 'Image of the completed project in Rostov-on-Don, Admiral'  
+    },
+    {
+        city: 'Sochi <br/>Thieves',
+        area: '105 m2',
+        time: '4 months',
+        imgSrc: './img/completed-projects-2.png',
+        altText: 'Image of the completed project in Sochi, Thieves'  
+    },
+    {
+        city: 'Rostov-on-Don <br/>Patriotic',
+        area: '93 m2',
+        time: '3 months',
+        imgSrc: './img/completed-projects-3.png',
+        altText: 'Image of the completed project in Rostov-on-Don, Patriotic'  
+    },
+]
 
-const admiralInfo = document.getElementById('admiral-info');
-const sochiInfo = document.getElementById('sochi-info');
-const patrioticInfo = document.getElementById('patriotic-info');
+const details = document.querySelectorAll('.show-projects__detail-p');
 const leftArrow = document.querySelector('.show-projects__left-arrow');
 const rightArrow = document.querySelector('.show-projects__right-arrow');
-const leftBtn = document.getElementById('left-btn');
-const middleBtn = document.getElementById('middle-btn');
-const rightBtn = document.getElementById('right-btn');
-const admiralLabel = document.getElementById('admiral-label');
-const sochiLabel = document.getElementById('sochi-label');
-const patrioticLabel = document.getElementById('patriotic-label');
-const admiralImage = document.getElementById('admiral-image');
-const sochiImage = document.getElementById('sochi-image');
-const patrioticImage = document.getElementById('patriotic-image');
+const sliderBtns = document.querySelectorAll('.show-projects__button');
+const imgDiv = document.querySelector('.show-projects__image');
+const labels = document.querySelectorAll('.show-projects__project-name');
 
-// Listeners
+let currentSlide = 0;
 
-rightArrow.addEventListener('click', () => {
-    if (leftBtn.classList.contains('show-projects__button--active')) {
-        showSochi()
-    } else if (middleBtn.classList.contains('show-projects__button--active')) {
-        showPatriotic()
-    } else {
-        showAdmiral()
-    }
-})
+showSlide(currentSlide);
 
 leftArrow.addEventListener('click', () => {
-    if (leftBtn.classList.contains('show-projects__button--active')) {
-        showPatriotic()
-    } else if (middleBtn.classList.contains('show-projects__button--active')) {
-        showAdmiral()
+    if (currentSlide === 0) {
+        showSlide(slides.length - 1)
     } else {
-        showSochi()
+        showSlide(currentSlide - 1)
     }
-})
+});
 
-leftBtn.addEventListener('click', showAdmiral);
-middleBtn.addEventListener('click', showSochi);
-rightBtn.addEventListener('click', showPatriotic);
+rightArrow.addEventListener('click', () => {
+    if (currentSlide === (slides.length - 1)) {
+        showSlide(0)
+    } else {
+        showSlide(currentSlide + 1)
+    }
+});
 
-admiralLabel.addEventListener('click', showAdmiral);
-sochiLabel.addEventListener('click', showSochi);
-patrioticLabel.addEventListener('click', showPatriotic);
+sliderBtns.forEach((item, index) => item.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSlide(index);
+}));
 
-// Functions
+labels.forEach((item, index) => item.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSlide(index);
+}));
 
-function showAdmiral() {
-    admiralInfo.classList.remove('show-projects__details--hidden');
-    sochiInfo.classList.add('show-projects__details--hidden');
-    patrioticInfo.classList.add('show-projects__details--hidden');
-
-    admiralLabel.classList.add('show-projects__project-name--active');
-    sochiLabel.classList.remove('show-projects__project-name--active');
-    patrioticLabel.classList.remove('show-projects__project-name--active');
-
-    leftBtn.classList.add('show-projects__button--active');
-    middleBtn.classList.remove('show-projects__button--active');
-    rightBtn.classList.remove('show-projects__button--active');
-
-    admiralImage.classList.remove('show-projects__image--hidden');
-    sochiImage.classList.add('show-projects__image--hidden');
-    patrioticImage.classList.add('show-projects__image--hidden');
-}
-
-function showSochi() {
-    sochiInfo.classList.remove('show-projects__details--hidden');
-    admiralInfo.classList.add('show-projects__details--hidden');
-    patrioticInfo.classList.add('show-projects__details--hidden');
-
-    sochiLabel.classList.add('show-projects__project-name--active');
-    admiralLabel.classList.remove('show-projects__project-name--active');
-    patrioticLabel.classList.remove('show-projects__project-name--active');
-
-    middleBtn.classList.add('show-projects__button--active');
-    rightBtn.classList.remove('show-projects__button--active');
-    leftBtn.classList.remove('show-projects__button--active');
-
-    sochiImage.classList.remove('show-projects__image--hidden');
-    admiralImage.classList.add('show-projects__image--hidden');
-    patrioticImage.classList.add('show-projects__image--hidden');
-}
-
-function showPatriotic() {
-    patrioticInfo.classList.remove('show-projects__details--hidden');
-    admiralInfo.classList.add('show-projects__details--hidden');
-    sochiInfo.classList.add('show-projects__details--hidden');
-
-    patrioticLabel.classList.add('show-projects__project-name--active');
-    admiralLabel.classList.remove('show-projects__project-name--active');
-    sochiLabel.classList.remove('show-projects__project-name--active');
-
-    rightBtn.classList.add('show-projects__button--active');
-    middleBtn.classList.remove('show-projects__button--active');
-    leftBtn.classList.remove('show-projects__button--active');
-
-    patrioticImage.classList.remove('show-projects__image--hidden');
-    admiralImage.classList.add('show-projects__image--hidden');
-    sochiImage.classList.add('show-projects__image--hidden');
+function showSlide(index) {
+    details[0].innerHTML = `${slides[index].city}`;
+    details[1].innerHTML = `${slides[index].area}`;
+    details[2].innerHTML = `${slides[index].time}`;
+    imgDiv.innerHTML = `<img src="${slides[index].imgSrc}" alt="${slides[index].altText}"/>`;
+    sliderBtns.forEach(item => {
+        item.classList.remove('show-projects__button--active')
+    });
+    sliderBtns[index].classList.add('show-projects__button--active');
+    labels.forEach(item => {
+        item.classList.remove('show-projects__project-name--active')
+    });
+    labels[index].classList.add('show-projects__project-name--active');
+    currentSlide = index;
 }
